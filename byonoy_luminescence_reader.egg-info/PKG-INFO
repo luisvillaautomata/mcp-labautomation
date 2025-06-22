@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: byonoy-luminescence-reader
+Version: 0.1.0
+Summary: MCP server for Byonoy Luminescence Reader
+Author-email: Your Name <your.email@example.com>
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: byonoy_devices
+Requires-Dist: mcp[cli]
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+
+# Python SDK Example
+
+This example demonstrates the basic usage of the Byonoy Device Library in Python.
+
+## Setup
+
+Install the Python dependencies, preferably into a virtual environment.
+
+```
+python -m venv .venv
+. .venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Run
+
+Make sure the device is attached, then run the example client script.
+
+```
+python example.py
+```
+
+The script should list some information about the attached devices. Depending on the attached device type the script will then perform a measurement.
+
+## Mock Data
+
+The library itself does not provide simulated devices, but through the magic of Python we can make an ad-hoc mock device by replacing the relevant library calls. See `mock.py` for a slightly stripped down version of `example.py` with all the relevant functions mocked.

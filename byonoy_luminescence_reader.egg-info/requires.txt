@@ -1,0 +1,7 @@
+byonoy_devices
+mcp[cli]
+
+[dev]
+pytest
+black
+flake8

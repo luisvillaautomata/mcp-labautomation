@@ -1,0 +1,3 @@
+-i https://git.byonoy.com/api/packages/public/pypi/simple/
+byonoy_devices
+mcp[cli]

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "byonoy-luminescence-reader"
+version = "0.1.0"
+description = "MCP server for Byonoy Luminescence Reader"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "byonoy_devices",
+    "mcp[cli]",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "flake8",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+"*" = ["*.txt", "*.md"]
+
+# Configure uv to use the custom index
+[[tool.uv.index]]
+name = "byonoy"
+url = "https://git.byonoy.com/api/packages/public/pypi/simple/"
+
+# Alternative: configure pip to use the custom index
+[tool.pip.index]
+byonoy = "https://git.byonoy.com/api/packages/public/pypi/simple/"
