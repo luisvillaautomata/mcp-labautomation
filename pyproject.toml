@@ -7,24 +7,48 @@ name = "byonoy-luminescence-reader"
 version = "0.1.0"
 description = "MCP server for Byonoy Luminescence Reader"
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "Luis Villa", email = "luis.villa@example.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["mcp", "byonoy", "luminescence", "lab-automation"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
     "byonoy_devices",
-    "mcp[cli]",
+    "mcp[cli]>=1.0.0",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest",
-    "black",
-    "flake8",
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
 ]
+
+[project.scripts]
+byonoy-mcp = "byonoy_luminescence_reader.server:main"
+
+[project.urls]
+Homepage = "https://github.com/luisvillaautomata/mcp-labautomation"
+Repository = "https://github.com/luisvillaautomata/mcp-labautomation"
+Issues = "https://github.com/luisvillaautomata/mcp-labautomation/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
+include = ["byonoy_luminescence_reader*"]
 
 [tool.setuptools.package-data]
 "*" = ["*.txt", "*.md"]

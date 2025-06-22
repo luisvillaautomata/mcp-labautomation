@@ -1,0 +1,2 @@
+[console_scripts]
+byonoy-mcp = byonoy_luminescence_reader.server:main
